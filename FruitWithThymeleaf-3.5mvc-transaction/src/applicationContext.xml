@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<beans>
+    <bean id="fruitDao" class="fruit.dao.impl.FruitDaoImpl"/>
+
+    <!--    property描述了bean与bean直接的依赖关系-->
+    <bean id="fruitService" class="fruit.service.impl.FruitServiceImpl">
+        <!--
+        property标签用来表示属性, name表示属性名, ref白哦是引用其它bean的id值
+        相当于给FruitServiceImpl类增加一个FruitDaoImpl类属性
+        -->
+        <property name="fruitDao" ref="fruitDao"/>
+    </bean>
+
+    <!--    对fruit发请求, 则FruitController类做处理-->
+    <bean id="fruit" class="fruit.controllers.FruitController">
+            <property name="fruitService" ref="fruitService"/>
+    </bean>
+
+</beans>
