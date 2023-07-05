@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<beans>
+    // 对fruit发请求, 则FruitController类做处理
+    <bean id="fruit" class="fruit.controllers.FruitController"/>
+
+</beans>

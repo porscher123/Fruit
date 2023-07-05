@@ -1,0 +1,73 @@
+<!--<!DOCTYPE html>-->
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/index.css">
+    <script language="JavaScript" src="js/index.js"></script>
+</head>
+<body>
+<div id="div_container">
+    <div id="div_fruit_list">
+        <p class="center f30">欢迎使用水果库存后台管理系统</p>
+
+        <div id="div_add" style="border: red 1px">
+            <form th:action="@{fruit.do}" method="post" style="float: left; width: 70%; margin-left: 4px">
+                <input type="hidden" name="oper" value="query">
+                请输入查询关键字: <input type="text" name="keyword">
+                <input type="submit" value="查询" class="btn">
+            </form>
+            <a  id="a_add" th:href="@{/add.html}">添加新库存记录</a>
+        </div>
+
+
+
+
+
+        <table id="tbl_fruit">
+            <tr>
+                <th>名称</th>
+                <th>单价</th>
+                <th>库存</th>
+                <th>操作</th>
+            </tr>
+            <tr th:if="${#lists.isEmpty(session.fruitList)}">
+                <td colspan="4">对不起, 库存为空</td>
+            </tr>
+
+
+            <tr th:unless="${#lists.isEmpty(session.fruitList)}"
+                th:each="fruit : ${session.fruitList}">
+
+                <td ><a th:text="${fruit.name}" th:href="@{fruit.do(id=${fruit.id}, operate='edit')}"></a>
+
+                <td th:text="${fruit.price}"></td>
+
+                <td th:text="${fruit.amount}"></td>
+
+                <td><img src="imgs/delete.png" class="delImg"
+                         th:onclick="|delFruit(${fruit.id})|"></td>
+            </tr>
+
+        </table>
+
+
+
+
+        <!--实现分页-->
+        <div style="width: 60%;margin-left: 20%; padding-top: 4px" class="center">
+            <input type="button" value="首 页" th:disabled="${session.curPage==1}"
+                   th:onclick="|page(1)|">
+            <input type="button" value="上一页" th:disabled="${session.curPage==1}"
+                   th:onclick="|page(${session.curPage-1})|">
+            <input type="button" value="下一页" th:disabled="${session.curPage==session.pages}"
+                   th:onclick="|page(${session.curPage + 1})|">
+            <input type="button" value="尾 页" th:disabled="${session.curPage==session.pages}"
+                   th:onclick="|page(${session.pages})|">
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

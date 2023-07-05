@@ -1,0 +1,50 @@
+<!--<!DOCTYPE html>-->
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>edit</title>
+    <link rel="stylesheet" href="css/edit.css">
+</head>
+<body>
+<div id="div_container">
+    <div id="div_fruit_list">
+        <p class="center f30">编辑库存信息</p>
+        <form action="fruit.do" method="post" >
+            <!--operate是update❗❗❗❗❗❗-->
+            <input type="hidden" name="operate" value="update">
+
+            <input type="hidden" name="id" th:value="${fruit.id}">
+            <table id="tbl_fruit" >
+                <!-- 隐藏域, 功能类似于文本框, 它的值会随表单而发送给组件, 而用户看不到-->
+                <tr>
+                    <th class="w20">名称:</th>
+                    <td><input type="text" name="name" th:value="${fruit.name}"></td>
+                </tr>
+                <tr>
+                    <th class="w20">单价:</th>
+                    <td><input type="text" name="price" th:value="${fruit.price}"></td>
+                </tr>
+                <tr>
+                    <th class="w20">库存:</th>
+                    <td><input type="text" name="amount" th:value="${fruit.amount}"></td>
+                </tr>
+                <tr>
+                    <th class="w20">备注:</th>
+                    <td><input type="text" name="comment" th:value="${fruit.comment}"></td>
+                </tr>
+                <tr>
+                    <th colspan="2">
+                        <input type="submit" value="修改">
+                    </th>
+
+                </tr>
+
+
+            </table>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>
