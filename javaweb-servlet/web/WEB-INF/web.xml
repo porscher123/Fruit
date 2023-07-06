@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="https://jakarta.ee/xml/ns/jakartaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd"
+         version="5.0">
+
+    <context-param>
+        <param-name>url</param-name>
+        <param-value>jdbc:mysql://localhost:3306/mybatis</param-value>
+    </context-param>
+
+    <servlet>
+        <servlet-name>Demo01Servlet</servlet-name>
+        <servlet-class>servlet.Demo01Servlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Demo01Servlet</servlet-name>
+        <url-pattern>/demo01</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>Demo02Servlet</servlet-name>
+        <servlet-class>servlet.Demo02Servlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Demo02Servlet</servlet-name>
+        <url-pattern>/demo02</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet>
+        <servlet-name>HelloServlet</servlet-name>
+        <servlet-class>wxc.servletcontext.HelloServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>HelloServlet</servlet-name>
+        <url-pattern>/hello</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>GetServlet</servlet-name>
+        <servlet-class>wxc.servletcontext.GetServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>GetServlet</servlet-name>
+        <url-pattern>/getc</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet>
+        <servlet-name>Demo</servlet-name>
+        <servlet-class>wxc.servletcontext.Demo</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Demo</servlet-name>
+        <url-pattern>/demo</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>RequestDispatch</servlet-name>
+        <servlet-class>wxc.servletcontext.RequestDispatch</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>RequestDispatch</servlet-name>
+        <url-pattern>/req</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>PropertyDemo</servlet-name>
+        <servlet-class>wxc.servletcontext.PropertyDemo</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>PropertyDemo</servlet-name>
+        <url-pattern>/prop</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet>
+        <servlet-name>SessionDemo</servlet-name>
+        <servlet-class>wxc.servlet.SessionDemo</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SessionDemo</servlet-name>
+        <url-pattern>/session</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>SaveFiledDemo</servlet-name>
+        <servlet-class>wxc.servlet.SaveFiledDemo</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SaveFiledDemo</servlet-name>
+        <url-pattern>/s1</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>SaveFiledDemo1</servlet-name>
+        <servlet-class>wxc.servlet.SaveFiledDemo1</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SaveFiledDemo1</servlet-name>
+        <url-pattern>/s2</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>DispatchDemo</servlet-name>
+        <servlet-class>wxc.servlet.DispatchDemo</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DispatchDemo</servlet-name>
+        <url-pattern>/dis1</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>DispatchDemo1</servlet-name>
+        <servlet-class>wxc.servlet.DispatchDemo1</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DispatchDemo1</servlet-name>
+        <url-pattern>/dis2</url-pattern>
+    </servlet-mapping>
+
+
+</web-app>
